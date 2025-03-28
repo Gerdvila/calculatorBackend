@@ -1,8 +1,8 @@
 package com.leasing.calculator.service;
 
 import com.leasing.calculator.api.model.exceptions.AppException;
-import com.leasing.calculator.api.model.request.UserLoginRequest;
-import com.leasing.calculator.api.model.request.UserRegisterRequest;
+import com.leasing.calculator.api.model.request.aggregates.UserLoginRequest;
+import com.leasing.calculator.api.model.request.aggregates.UserRegisterRequest;
 import com.leasing.calculator.api.model.response.UserCredentialResponse;
 import com.leasing.calculator.domain.aggregates.response.UserCredentialResponseDO;
 import com.leasing.calculator.domain.enums.Role;

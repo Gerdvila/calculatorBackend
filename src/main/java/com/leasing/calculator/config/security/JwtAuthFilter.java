@@ -10,7 +10,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-
 public class JwtAuthFilter extends OncePerRequestFilter {
 
     private final UserAuthProvider userAuthProvider;
