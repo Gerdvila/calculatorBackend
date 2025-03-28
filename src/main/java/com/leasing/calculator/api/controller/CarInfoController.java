@@ -84,7 +84,7 @@ public class CarInfoController {
     })
     @GetMapping("/model_info")
     @ResponseStatus(HttpStatus.OK)
-    public CarModelInfoResponse getModelInfo(@RequestParam @Parameter(description = "ID of the car model") int modelId)
+    public CarModelInfoResponse getModelInfo(@RequestParam(name = "model_id") @Parameter(description = "ID of the car model") int modelId)
             throws TypeMismatchException, JsonProcessingException {
         return fetchCarInfoService.fetchModelInfo(modelId);
     }
@@ -104,7 +104,7 @@ public class CarInfoController {
     })
     @GetMapping("/variant_info")
     @ResponseStatus(HttpStatus.OK)
-    public CarVariantInfoResponse getVariantInfo(@RequestParam @Parameter(description = "ID of the car variant") int variantId)
+    public CarVariantInfoResponse getVariantInfo(@RequestParam(name = "variant_id") @Parameter(description = "ID of the car variant") int variantId)
             throws TypeMismatchException, JsonProcessingException {
         return fetchCarInfoService.fetchVariantInfo(variantId);
     }

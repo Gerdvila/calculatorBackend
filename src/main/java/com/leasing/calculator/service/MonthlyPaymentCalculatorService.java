@@ -25,8 +25,8 @@ public class MonthlyPaymentCalculatorService {
         BigDecimal interestRate = getInterestRate(monthlyPaymentCalculationRequest, interestRateResponseDO);
         BigDecimal residualValue = calculateResidualValue(monthlyPaymentCalculationRequest);
         BigDecimal loanAmountMinusDownPayment = calculateLoanAmountMinusDownPayment(monthlyPaymentCalculationRequest);
-        BigDecimal monthlyInterest = calculateMonthlyInterest(loanAmountMinusDownPayment, interestRate, monthlyPaymentCalculationRequest.loanMonthPeriod());
-        BigDecimal monthlyLoanAmount = calculateMonthlyLoanAmount(loanAmountMinusDownPayment, residualValue, monthlyPaymentCalculationRequest.loanMonthPeriod());
+        BigDecimal monthlyInterest = calculateMonthlyInterest(loanAmountMinusDownPayment, interestRate, monthlyPaymentCalculationRequest.period());
+        BigDecimal monthlyLoanAmount = calculateMonthlyLoanAmount(loanAmountMinusDownPayment, residualValue, monthlyPaymentCalculationRequest.period());
 
         BigDecimal monthlyPayment = monthlyLoanAmount.add(monthlyInterest);
         return new MonthlyPaymentCalculationResponse(monthlyPayment.setScale(2, RoundingMode.HALF_UP));
