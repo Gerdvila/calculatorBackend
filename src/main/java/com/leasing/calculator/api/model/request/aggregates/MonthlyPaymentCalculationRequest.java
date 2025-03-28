@@ -14,7 +14,7 @@ public record MonthlyPaymentCalculationRequest(
 
         @Schema(description = "The loan period in months.", example = "60")
         @NotNull
-        int loanMonthPeriod,
+        int period,
 
         @Schema(description = "The down payment amount.", example = "5000.00")
         @NotNull
