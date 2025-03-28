@@ -37,7 +37,7 @@ out/
 .vscode/
 
 ### DEV files
-application*.properties
+application.*.properties
 application*.yml
 
 ### Logs
