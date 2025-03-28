@@ -1,9 +1,9 @@
 package com.leasing.calculator.service.helper;
 
-import com.leasing.calculator.api.model.response.carApi.CarMakeResponse;
-import com.leasing.calculator.api.model.response.carApi.CarModelInfoResponse;
-import com.leasing.calculator.api.model.response.carApi.CarModelResponse;
-import com.leasing.calculator.api.model.response.carApi.CarVariantInfoResponse;
+import com.leasing.calculator.api.model.response.carApi.aggregates.CarMakeResponse;
+import com.leasing.calculator.api.model.response.carApi.aggregates.CarModelInfoResponse;
+import com.leasing.calculator.api.model.response.carApi.aggregates.CarModelResponse;
+import com.leasing.calculator.api.model.response.carApi.aggregates.CarVariantInfoResponse;
 import com.leasing.calculator.domain.aggregates.response.carApi.CarMakeResponseDO;
 import com.leasing.calculator.domain.aggregates.response.carApi.CarModelResponseDO;
 import com.leasing.calculator.domain.aggregates.response.carApi.EngineDataResponseDO;

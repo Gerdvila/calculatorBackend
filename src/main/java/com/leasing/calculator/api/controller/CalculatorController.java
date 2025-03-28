@@ -1,6 +1,6 @@
 package com.leasing.calculator.api.controller;
 
-import com.leasing.calculator.api.model.request.MonthlyPaymentCalculationRequest;
+import com.leasing.calculator.api.model.request.aggregates.MonthlyPaymentCalculationRequest;
 import com.leasing.calculator.api.model.response.MonthlyPaymentCalculationResponse;
 import com.leasing.calculator.service.MonthlyPaymentCalculatorService;
 import io.swagger.v3.oas.annotations.Operation;

@@ -1,7 +1,7 @@
 package com.leasing.calculator.api.controller;
 
-import com.leasing.calculator.api.model.request.UserLoginRequest;
-import com.leasing.calculator.api.model.request.UserRegisterRequest;
+import com.leasing.calculator.api.model.request.aggregates.UserLoginRequest;
+import com.leasing.calculator.api.model.request.aggregates.UserRegisterRequest;
 import com.leasing.calculator.api.model.response.UserCredentialResponse;
 import com.leasing.calculator.config.security.UserAuthProvider;
 import com.leasing.calculator.service.UserAuthService;

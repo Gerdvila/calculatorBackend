@@ -1,10 +1,10 @@
 package com.leasing.calculator.api.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.leasing.calculator.api.model.response.carApi.CarMakeResponse;
-import com.leasing.calculator.api.model.response.carApi.CarModelInfoResponse;
-import com.leasing.calculator.api.model.response.carApi.CarModelResponse;
-import com.leasing.calculator.api.model.response.carApi.CarVariantInfoResponse;
+import com.leasing.calculator.api.model.response.carApi.aggregates.CarMakeResponse;
+import com.leasing.calculator.api.model.response.carApi.aggregates.CarModelInfoResponse;
+import com.leasing.calculator.api.model.response.carApi.aggregates.CarModelResponse;
+import com.leasing.calculator.api.model.response.carApi.aggregates.CarVariantInfoResponse;
 import com.leasing.calculator.service.FetchCarInfoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

@@ -1,4 +1,4 @@
-package com.leasing.calculator.api.model.response.carApi;
+package com.leasing.calculator.api.model.response.carApi.aggregates;
 
 import java.util.List;
 

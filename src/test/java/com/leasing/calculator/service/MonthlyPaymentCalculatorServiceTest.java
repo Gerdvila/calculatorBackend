@@ -1,6 +1,6 @@
 package com.leasing.calculator.service;
 
-import com.leasing.calculator.api.model.request.MonthlyPaymentCalculationRequest;
+import com.leasing.calculator.api.model.request.aggregates.MonthlyPaymentCalculationRequest;
 import com.leasing.calculator.api.model.response.MonthlyPaymentCalculationResponse;
 import com.leasing.calculator.domain.aggregates.response.InterestRateResponseDO;
 import com.leasing.calculator.repository.InterestRateRepositoryDAO;
