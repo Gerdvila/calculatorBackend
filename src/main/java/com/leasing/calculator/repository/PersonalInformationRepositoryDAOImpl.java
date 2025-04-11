@@ -1,11 +1,15 @@
 package com.leasing.calculator.repository;
 
 import com.leasing.calculator.domain.aggregates.request.PersonalInformationRequestDO;
+import com.leasing.calculator.domain.aggregates.response.PersonalInformationResponseDO;
+import com.leasing.calculator.repository.mapper.PersonalInformationMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -40,5 +44,34 @@ public class PersonalInformationRepositoryDAOImpl implements PersonalInformation
                 .addValue("languagePref", personalInformationDAORequest.getLanguagePref());
 
         return namedParameterJdbcTemplate.queryForObject(query, params, String.class);
+    }
+
+    @Override
+    public List<PersonalInformationResponseDO> getAllPersonalInformationByPage(long pageNumber){
+        String query = """
+            SELECT *
+            FROM PERSONAL_INFORMATION
+            LIMIT 7 OFFSET :offset
+            """;
+        SqlParameterSource params = new MapSqlParameterSource()
+                .addValue("offset", (pageNumber - 1) * 7);
+
+        return namedParameterJdbcTemplate.query(query, params, new PersonalInformationMapper());
+
+    }
+
+    public Optional<PersonalInformationResponseDO> getPersonalInformationById(String pid) {
+        String query = """
+                SELECT *
+                FROM PERSONAL_INFORMATION
+                WHERE id = :id
+                """;
+        SqlParameterSource params = new MapSqlParameterSource()
+                .addValue("id", pid);
+
+        return namedParameterJdbcTemplate.query(query, params, new PersonalInformationMapper())
+                .stream()
+                .findFirst();
+
     }
 }

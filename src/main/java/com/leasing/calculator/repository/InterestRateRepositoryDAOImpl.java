@@ -17,10 +17,7 @@ public class InterestRateRepositoryDAOImpl implements InterestRateRepositoryDAO 
 
     @Override
     public InterestRateResponseDO fetchAllInterestRate() {
-        String query = """
-                    SELECT regular, eco
-                    FROM interest_rate
-                """;
+        String query = "SELECT regular, eco FROM interest_rate;";
         return namedParameterJdbcTemplate.queryForObject(query, new MapSqlParameterSource(), new InterestRateMapper());
     }
 }
