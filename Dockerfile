@@ -17,4 +17,4 @@ COPY . /app
 RUN ./gradlew build
 
 # Set the startup command
-CMD ["java", "-jar", "build/libs/sick.jar"]
+CMD ["java", "-jar", "build/libs/calculator.jar"]
