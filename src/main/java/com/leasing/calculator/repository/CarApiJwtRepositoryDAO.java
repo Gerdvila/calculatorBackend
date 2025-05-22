@@ -6,4 +6,6 @@ public interface CarApiJwtRepositoryDAO {
     CarAPIJwt getJwtToken();
 
     void updateJwtToken(CarAPIJwt jwtToken);
+
+    String fetchJwtFromCarAPI(String carApiToken, String carApiSecret);
 }
