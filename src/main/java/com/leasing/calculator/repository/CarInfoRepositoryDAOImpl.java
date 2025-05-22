@@ -79,7 +79,7 @@ public class CarInfoRepositoryDAOImpl implements CarInfoRepositoryDAO {
 
     private CarAPIJwt getCarAPIJwt() throws JsonProcessingException {
         CarAPIJwt jwtToken = carApiJwtRepositoryDAO.getJwtToken();
-        if (jwtToken.isExpired()) {
+        if (jwtToken == null || jwtToken.isExpired()) {
             return carAPILoginService.loginAndSetJwt();
         }
         return jwtToken;
