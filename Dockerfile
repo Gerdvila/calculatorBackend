@@ -8,14 +8,14 @@ COPY build.gradle settings.gradle gradlew /app/
 COPY gradle /app/gradle
 
 # Download and install Gradle
-RUN chmod +x ./gradlew 
+RUN chmod +x ./gradlew
 RUN ./gradlew --version
 
 # Copy the project files
 COPY . /app
 
 # Build the project
-RUN chmod +x ./gradlew 
+RUN chmod +x ./gradlew
 RUN ./gradlew build
 
 # Set the startup command

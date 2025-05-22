@@ -11,7 +11,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -95,7 +94,7 @@ class UserAuthRepositoryDAOImplTest {
         UserCredentialResponseDO mockUser = createMockUser();
 
         when(passwordEncoder.encode(request.password())).thenReturn(encodedPassword);
-        when(namedParameterJdbcTemplate.query(any(String.class), any(SqlParameterSource.class), any(RowMapper.class)))
+        when(namedParameterJdbcTemplate.query(any(String.class), any(SqlParameterSource.class), any(UserCredentialsMapper.class)))
                 .thenReturn(List.of(mockUser));
 
         UserCredentialResponseDO result = userAuthRepository.registerUser(request);
@@ -105,7 +104,7 @@ class UserAuthRepositoryDAOImplTest {
 
         verify(passwordEncoder).encode(request.password());
         verify(namedParameterJdbcTemplate).update(any(String.class), any(SqlParameterSource.class));
-        verify(namedParameterJdbcTemplate).query(any(String.class), any(SqlParameterSource.class), any(RowMapper.class));
+        verify(namedParameterJdbcTemplate).query(any(String.class), any(SqlParameterSource.class), any(UserCredentialsMapper.class));
     }
 
     @Test

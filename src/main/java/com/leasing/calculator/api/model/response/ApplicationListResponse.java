@@ -9,7 +9,7 @@ public record ApplicationListResponse(
         String firstName,
         String lastName,
         boolean isOpened,
-        LeaseApplicationStatus STATUS,
+        LeaseApplicationStatus status,
         LocalDateTime createdAt,
         boolean isHighRisk
 ) {
